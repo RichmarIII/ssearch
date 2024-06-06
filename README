@@ -1,4 +1,3 @@
-
 # SSearch: File Search by Semantic Similarity
 
 SSearch is a command-line tool that searches for files based on the semantic similarity of the search query with the file's name and optionally, the content. It uses machine learning for generating embeddings and calculating similarity.
