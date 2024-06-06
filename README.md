@@ -106,7 +106,7 @@ pip install -r requirements.txt
 
 ## Contributing
 
-Feel free to open issues or submit pull requests on [GitHub](https://github.com/yourusername/sssearch).
+Feel free to open issues or submit pull requests on [GitHub](https://github.com/RichmarIII/ssearch).
 
 ## License
 
