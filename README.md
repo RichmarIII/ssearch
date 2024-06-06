@@ -3,6 +3,7 @@
 SSearch is a command-line tool that searches for files based on the semantic similarity of the search query with the file's name and optionally, the content. It uses machine learning for generating embeddings and calculating similarity.
 
 ## Features
+
 - Search files by name semantic similarity.
 - Optional content-based search.
 - Recursive directory search.
@@ -32,10 +33,12 @@ python ssearch.py search_dir query [--OPTION VALUE] [--OPTION VALUE] ...
 ```
 
 ### Positional Arguments
+
 - `search_dir`: Directory to search in.
 - `query`: Search query.
 
 ### Optional Arguments
+
 - `-t`, `--threshold`: Threshold for semantic similarity [0-1]. Default is 0.3. Files with similarity greater than the threshold are shown.
 - `-d`, `--device`: Device to use. Default is automatic selection. Use 'cpu' to force CPU and 'cuda' to force GPU.
 - `-c`, `--content`: Search in content. Default is `False`. If set to `True`, search in content as well as name.
@@ -46,6 +49,7 @@ python ssearch.py search_dir query [--OPTION VALUE] [--OPTION VALUE] ...
 ## Examples
 
 ### Basic Search
+
 Search for files in the `documents` directory with names semantically similar to "report":
 
 ```bash
@@ -53,6 +57,7 @@ python ssearch.py documents "report"
 ```
 
 ### Search with Custom Threshold
+
 Search for files with names semantically similar to "report" and a similarity threshold of 0.5:
 
 ```bash
@@ -60,6 +65,7 @@ python ssearch.py documents "report" --threshold 0.5
 ```
 
 ### Content-based Search
+
 Search for files with names or content semantically similar to "report":
 
 ```bash
@@ -67,6 +73,7 @@ python ssearch.py documents "report" --content True
 ```
 
 ### Recursive Search
+
 Search for files in `documents` and all its subdirectories:
 
 ```bash
@@ -74,6 +81,7 @@ python ssearch.py documents "report" --recursive True
 ```
 
 ### Specify Device
+
 Force the use of CPU for inference:
 
 ```bash
@@ -82,8 +90,7 @@ python ssearch.py documents "report" --device cpu
 
 ## How It Works
 
-1. **Argument Parsing**: The script uses `argparse` to handle command-line arguments.
-2. **Model Loading**: The machine learning model is loaded based on the specified device (CPU/GPU).
+1. **Model Loading**: The machine learning model is loaded based on the specified device (CPU/GPU).
 3. **File Gathering**: The script gathers file paths from the specified directory. If recursive search is enabled, it gathers files from subdirectories as well.
 4. **Embedding Calculation**: Embeddings are calculated for the query and the file names (or contents, if enabled).
 5. **Similarity Calculation**: Cosine similarity is calculated between the query embedding and the file embeddings.
